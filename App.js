@@ -1,14 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, SafeAreaView, StatusBar } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Gatito</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import Servicos from './src/telas/Servicos';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,3 +11,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+const App = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <StatusBar />
+
+      <Servicos />
+    </SafeAreaView>
+  );
+};
+
+export default App;
