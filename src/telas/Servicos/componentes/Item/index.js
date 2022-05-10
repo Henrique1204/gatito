@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, Button }  from 'react-native';
+import { View, Text }  from 'react-native';
 
 import * as Estilos from './estilos';
 
 import CampoInteiro from '../../../../componentes/CampoInteiro';
+import Botao from '../../../../componentes/Botao';
 
 const Item = ({ nome, preco, descricao }) => {
     const [quantidade, setQuantidade] = React.useState(0);
@@ -21,7 +22,7 @@ const Item = ({ nome, preco, descricao }) => {
                     <View style={Estilos.valor}>
                         <Text style={Estilos.descricao}>Quantidade:</Text>
 
-                        <CampoInteiro value={quantidade} onChange={setQuantidade}/>
+                        <CampoInteiro style={Estilos.quantidade} value={quantidade} onChange={setQuantidade}/>
                     </View>
 
                     <View style={Estilos.valor}>
@@ -30,7 +31,7 @@ const Item = ({ nome, preco, descricao }) => {
                     </View>
                 </View>
 
-                <Button title='Adicionar' />
+                <Botao>Adicionar</Botao>
             </View>
 
             <View style={Estilos.divisor} />

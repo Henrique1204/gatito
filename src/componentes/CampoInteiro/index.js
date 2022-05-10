@@ -1,13 +1,24 @@
 import React from 'react';
 import { TextInput } from 'react-native';
 
-const CampoInteiro = ({ value, onChange, ...props }) => {
+import * as Estilos from './estilos';
+
+const CampoInteiro = ({ value, onChange, style, ...props }) => {
+    const atualiza = (novoValor) => {
+        const valorString = novoValor.toString();
+        const valorSemLetras = valorString.replace(/\D/, '');
+        const valorSemZerosEsquerda = Number(valorSemLetras);
+
+        onChange(valorSemZerosEsquerda);
+    };
+
     return (
         <TextInput
             keyboardType='number-pad'
             selectTextOnFocus
             value={String(value)}
-            onChangeText={(novoValor) => onChange(novoValor)}
+            onChangeText={atualiza}
+            style={[style, Estilos.campo]}
             {...props}
         />
     );
