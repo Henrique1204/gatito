@@ -14,6 +14,7 @@ const Servicos = () => {
                 data={ServicosMock.servicos}
                 renderItem={({ item }) => <Item {...item} />}
                 keyExtractor={({ id }) => String(id)}
+                removeClippedSubviews={false}
             />
         </>
     );
