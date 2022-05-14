@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, View, Text }  from 'react-native';
+import { View, Text }  from 'react-native';
 
 import * as Estilos from './estilos';
 
@@ -7,25 +7,18 @@ import CampoInteiro from '../../../../componentes/CampoInteiro';
 import Botao from '../../../../componentes/Botao';
 import formatarDinheiro from '../../../../utils/formatar-dinheiro';
 
-const Item = ({ nome, preco, descricao }) => {
-    const [quantidade, setQuantidade] = React.useState(1);
-    const [expandir, setExpandir] = React.useState(false);
-
-    const expandirToggle = () => {
-        setQuantidade(1);
-
-        setExpandir((prevExpandir) => !prevExpandir);
-    };
+const Item = ({ nome, preco, descricao, quantidade: quantidadeInicial }) => {
+    const [quantidade, setQuantidade] = React.useState(quantidadeInicial);
 
     return (
         <>
-            <TouchableOpacity style={Estilos.informacao} onPress={expandirToggle}>
+            <View style={Estilos.informacao}>
                 <Text style={Estilos.nome}>{nome}</Text>
                 <Text style={Estilos.descricao}>{descricao}</Text>
                 <Text style={Estilos.preco}>{formatarDinheiro(preco)}</Text>
-            </TouchableOpacity>
+            </View>
 
-            {expandir && <View style={Estilos.carrinho}>
+            <View style={Estilos.carrinho}>
                 <View>
                     <View style={Estilos.valor}>
                         <Text style={Estilos.descricao}>Quantidade:</Text>
@@ -39,8 +32,8 @@ const Item = ({ nome, preco, descricao }) => {
                     </View>
                 </View>
 
-                <Botao>Adicionar ao Carrinho</Botao>
-            </View>}
+                <Botao>Remover do Carrinho</Botao>
+            </View>
 
             <View style={Estilos.divisor} />
         </>

@@ -7,11 +7,11 @@ import Item from './componentes/Item';
 
 import * as Mocks from '../../mock';
 
-const Servicos = () => {
+const Carrinho = () => {
     return (
         <TelaPadrao>
             <FlatList
-                data={Mocks.servicos}
+                data={Mocks.carrinhos}
                 renderItem={({ item }) => <Item {...item} />}
                 keyExtractor={({ id }) => String(id)}
                 removeClippedSubviews={false}
@@ -20,4 +20,4 @@ const Servicos = () => {
     );
 };
 
-export default Servicos;
+export default Carrinho;
