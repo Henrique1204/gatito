@@ -5,10 +5,10 @@ import Carrinho from './src/telas/Carrinho';
 
 import * as EstilosGlobais from './estilos';
 
+import Rotas from './src/Rotas';
+
 const App = () => {
-  return (
-    <Carrinho />
-  );
+  return <Rotas />
 };
 
 export default App;
