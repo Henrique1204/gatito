@@ -1,9 +1,11 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, StatusBar } from 'react-native';
+import * as ReactNative from 'react-native';
 
 import Servicos from './src/telas/Servicos';
 
-const styles = StyleSheet.create({
+import * as EstilosGlobais from './estilos';
+
+const styles = ReactNative.StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -14,11 +16,16 @@ const styles = StyleSheet.create({
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar />
+    <ReactNative.SafeAreaView style={styles.container}>
+      <ReactNative.StatusBar />
 
-      <Servicos />
-    </SafeAreaView>
+      <ReactNative.KeyboardAvoidingView
+        behavior={ReactNative.Platform == 'ios' ? 'padding' : 'height'}
+        style={EstilosGlobais.preencher}
+      >
+        <Servicos />
+      </ReactNative.KeyboardAvoidingView>
+    </ReactNative.SafeAreaView>
   );
 };
 
