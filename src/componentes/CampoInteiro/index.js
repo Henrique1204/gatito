@@ -6,6 +6,9 @@ import * as Estilos from './estilos';
 const CampoInteiro = ({ value, onChange, style, ...props }) => {
     const atualiza = (novoValor) => {
         const valorString = novoValor.toString();
+
+        if (valorString.match(/e\+/g)) return onChange(0);
+
         const valorSemLetras = valorString.replace(/\D/, '');
         const valorSemZerosEsquerda = Number(valorSemLetras);
 
