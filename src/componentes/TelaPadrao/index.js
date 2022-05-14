@@ -8,7 +8,7 @@ const TelaPadrao = ({ children }) => {
     return (
         <>
             <ReactNative.SafeAreaView style={Estilos.container}>
-                <ReactNative.StatusBar />
+                <ReactNative.StatusBar backgroundColor={EstilosGlobais.cores.roxo} />
 
                 <ReactNative.KeyboardAvoidingView
                     behavior={ReactNative.Platform == 'ios' ? 'padding' : 'height'}
@@ -17,6 +17,8 @@ const TelaPadrao = ({ children }) => {
                     {children}
                 </ReactNative.KeyboardAvoidingView>
             </ReactNative.SafeAreaView>
+
+            <ReactNative.SafeAreaView style={Estilos.bottomView} />
         </>
     );
 };
