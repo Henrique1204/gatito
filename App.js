@@ -1,14 +1,14 @@
 import React from 'react';
-import * as ReactNative from 'react-native';
 
-import Carrinho from './src/telas/Carrinho';
-
-import * as EstilosGlobais from './estilos';
-
+import TelaPadrao from './src/componentes/TelaPadrao';
 import Rotas from './src/Rotas';
 
 const App = () => {
-  return <Rotas />
+  return (
+    <TelaPadrao>
+      <Rotas />
+    </TelaPadrao>
+  );
 };
 
 export default App;
